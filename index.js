@@ -23,7 +23,7 @@ function ongetPos(pos) {
             send_output(response); //setting response html
         },
         beforeSend: function(){
-            //console.log("before send");
+            $("#output").html("<div class='col-12'><img src='./loading.gif'></div>");
         }
     });
 }
