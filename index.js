@@ -46,11 +46,22 @@ function errors(err) {
 
 
 function send_output(response){
-    //console.log(response);
+    // console.log(response);
     var out=$("#output");
     var res="<div class='col-md-12'>";
+    res+="<img src=http://openweathermap.org/img/wn/"+response.weather[0].icon+"@2x.png >";
     res+="<h2>"+response.main.temp+" C</h2>";
     res+="<h3>"+response.name+","+response.sys.country+"</h3>";
+    res+="<table width=100% class='table-striped bg-light pt-3'>";
+    res+="<tr><th>Feels Like</th><td>"+response.main.feels_like+"</td></tr>"
+    res+="<tr><th>Humidity</th><td>"+response.main.humidity+"</td></tr>"
+    res+="<tr><th>Pressure</th><td>"+response.main.pressure+"</td></tr>"
+    res+="<tr><th>Sea Level</th><td>"+response.main.sea_level+"</td></tr>"
+    res+="<tr><th>Max Temp</th><td>"+response.main.temp_max+"</td></tr>"
+    res+="<tr><th>Min Temp</th><td>"+response.main.temp_min+"</td></tr>"
+    res+="<tr><th>Visibility</th><td>"+response.visibility+"</td></tr>"
+    res+="<tr><th>Wind</th><td>"+response.wind.speed+" m/s at "+response.wind.deg+" degree</td></tr>"
+    res+="</table>"
     res+="</div>";
     out.html(res);
 }
