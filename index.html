@@ -1,64 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- roboto font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- roboto font -->
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Weather</title>
+  </head>
 
-  <title>Weather</title>
-</head>
+  <body style="font-family: Roboto">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 text-center mt-5 mb-0">
+          <h1>Weather</h1>
+          <div
+            class="jumbotron p-2"
+            style="background-color: rgb(181, 235, 137)"
+          >
+            <!-- for button and form -->
+            <div class="row">
+              <div class="col-md-12">
+                <!-- button to access location -->
+                <button
+                  class="btn btn-primary btn-block mt-1 mb-1"
+                  id="loc_btn"
+                  onclick="fetch_data()"
+                >
+                  Use your Location
+                </button>
+                <hr />
+              </div>
+            </div>
 
-<body style="font-family: Roboto;">
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-6 text-center mt-5 mb-0">
-        <h1>Weather</h1>
-        <div class="jumbotron p-2" style="background-color: rgb(181, 235, 137);">
-
-          <!-- for button and form -->
-          <div class="row">
-            <div class="col-md-12">
-              <!-- <form action="#">
-                <input type="text" id="city" class="form-control mb-1 mt-1" placeholder="City">
-                <button type="submit" class="btn btn-outline-primary btn-block mt-1 mb-1">Search</button>
-              </form>
-              or -->
-              <button class="btn btn-primary btn-block mt-1 mb-1" id="loc_btn" onclick="fetch_data()">Use your
-                Location</button>
-              <hr>
+            <!-- for output result -->
+            <div id="output" class="row mt-1 mb-3">
+              <div class="col-md-12">
+                Click on 'Use your location' button and press 'allow' when
+                prompted!
+              </div>
             </div>
           </div>
-
-          <!-- for output result -->
-          <div id="output" class="row mt-1 mb-3">
-            <div class="col-md-12">
-              Click on 'Use your location' button and press 'allow' when prompted!
+          <div class="row m-5">
+            <div class="col-12">
+              This data is provided by this device's loaction sensors and
+              openweathermap api.
             </div>
           </div>
         </div>
-        <div class="row m-5">
-          <div class="col-12">
-            This data is provided by this device's loaction sensors and openweathermap api.
-          </div>
-        </div>
+        <div class="col-md-3"></div>
       </div>
-      <div class="col-md-3"></div>
     </div>
-  </div>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="./index.js"></script>
-</body>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom script to access loaction data and fetch the rsult from openwaethermap -->
+    <script src="./index.js"></script>
+  </body>
 </html>
